@@ -1,0 +1,356 @@
+/* Fonts 
+.rubik-bubbles-regular {
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.anonymous-pro-regular {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 400; 700;
+    font-style: normal; italic;
+}
+*/
+
+/* Universal Styles */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    background-color: #b35130; /* #a59ff9 - #8F4069 - #ABA5FA - #33574F - Used: #bbb7fa */
+    background-image: url(/resources/images/bg-grain-dark.png); /* Grain png to create noise over the background color */
+    background-size: 18.75rem; /* Size of the background image */
+    background-repeat: repeat;
+    font-family: "Anonymous Pro", monospace;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: 9rem; /* 144px */
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: #f4b7cd; /* #fac79e - #ffaf9e - #CF6766 - #9dbfc0 - Used: #4743B5 */
+    text-shadow: #9e3a63 0.25rem 0.25rem; /* 4px */
+}
+
+h2 {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 3.25rem; /* 52px */
+    letter-spacing: 0.1rem;
+    color: #f4b7cd;
+    text-shadow: #9e3a63 0.25rem 0.25rem; /* 4px */
+}
+
+h3 {
+    font-family: "Anonymous Pro", monospace; /* Redundant but added to be clear */
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    color: #f4b7cd;
+    text-shadow: #9e3a63 0.1875rem 0.1875rem; /* 3px */
+}
+
+p {
+    font-family: "Anonymous Pro", monospace; /* Redundant but added to be clear */
+    line-height: 1.4;
+    color: #FFF5EE;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Landing Page */
+
+header.landing-page {
+    display: grid;
+    height: 50rem; /* 800px */
+    grid-template: 2fr 1fr 2fr / repeat(3, 1fr); /* 3 rows (1 double row, 1 single row, 1 double row) and 3 columns */
+    grid-template-areas: ". . ."
+        ". title ."
+        ". name .";
+    justify-items: center;
+    
+    /* border: solid 1px blue; */
+}
+
+.landing-page h1 {
+    grid-area: title;
+    line-height: 1;
+    text-align: center;
+    align-self: center;
+
+    /* border: solid 1px red; */
+}
+
+.landing-page h3 {
+    grid-area: name;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    color: #FFF5EE;
+    text-shadow: none; /* So the divider doesn't have the shadow other h3 have */
+    align-self: start;
+
+    /* border: solid 1px yellow; */
+}
+
+.landing-page a {
+    color: #FFF5EE; /* #7771e0 - #f4f4ed - #F9F6EE - Used: #3E454B */
+    text-shadow: #9e3a63 0.1875rem 0.125rem; /* 2px */
+}
+
+.landing-page a:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 0.375rem;
+    text-decoration-thickness: 0.0625rem;
+}
+
+/* Main */
+
+main {
+
+}
+
+/* About Me */
+
+.about-me {
+    height: 40rem; /* 640px */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid pink; */
+}
+
+.picture-container {
+    flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
+    text-align: center;
+    width: 50%;
+    height: 100%;
+
+    /* border: 1px solid; */
+}
+
+.picture-container img {
+    height: 100%;
+}
+
+.bio {
+    flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
+    width: 50%;
+    margin-left: 10%;
+
+    /* border: 1px solid white; */
+}
+
+.bio h2 {
+    margin-bottom: 5%;
+}
+
+.bio p {
+    margin-right: 10%;
+}
+
+/* Skills */
+
+.skills {
+    margin: 7% 10%;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.skills-icons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.skills-icons .fa-brands {
+    font-size: 3rem; /* 48px */
+    color: #FFF5EE;
+}
+
+.fa-html5:hover {
+    color: #f06529;
+}
+
+.fa-css3-alt:hover {
+    color: #264de4;
+}
+
+.fa-js:hover {
+    color: #f0db4f;
+}
+
+.fa-react:hover {
+    color: #61DBFB;
+}
+
+.fa-node-js:hover {
+    color: #68a063;
+}
+
+.fa-git-alt:hover {
+    color: #F1502F;
+}
+
+/* Projects */
+
+.projects {
+    margin: 5% 10%;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.projects-list {
+    display: grid;
+    grid-template: 2fr / repeat(3, 1fr);
+    gap: 5% 3%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.project-container {
+    background-color: #f4b7cd;
+    background-image: url(/resources/images/bg-grain.png); /* Grain png to create noise over the background color */
+    background-size: 18.75rem; /* Size of the background image */
+    background-repeat: repeat;
+    border-radius: 1rem;
+    padding: 5% 7%;
+}
+
+.project-container h3 {
+    color: #9e3a63;
+    text-shadow: none;
+    margin: 3% auto;
+}
+
+.project-container p {
+    color: black;
+    margin: 5% auto;
+}
+
+.img-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 5% auto;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.project-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 3% auto;
+}
+
+.project-buttons a.button {
+    width: 33%;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #f4b7cd;
+    color: #9e3a63;
+    border: 0.125rem solid #9e3a63;
+    border-radius: 0.3125rem;
+    padding: 5%;
+    margin: auto 5%;
+}
+
+.project-buttons a.button:hover {
+    background-color: #9e3a63;
+    color: #f4b7cd;
+}
+
+/* Contaact */
+
+.contact {
+    margin: 7% 10%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.contact form {
+    width: 70%;
+    background-image: url(/resources/images/bg-grain.png); /* Grain png to create noise over the background color */
+    background-size: 18.75rem; /* Size of the background image */
+    background-repeat: repeat;
+    border-radius: 1rem;
+    padding: 3% 7%;
+}
+
+.contact label {
+    font-size: 1.125rem;
+    color: #FFF5EE;
+    text-shadow: #9e3a63 0.1875rem 0.125rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.contact input {
+    width: 100%;
+    height: 3rem;
+    border: 0.125rem solid #9e3a63;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 0.375rem auto 1.5rem;
+}
+
+.contact textarea {
+    width: 100%;
+    border: 0.125rem solid #9e3a63;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 0.375rem auto 1.5rem;
+}
+
+.contact .submit-button {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    background-color: #9e3a63;
+    color: #FFF5EE;
+}
+
+.contact .submit-button:hover {
+    background-color: #f4b7cd;
+    color: #9e3a63;
+}
+
+/* Footer */
