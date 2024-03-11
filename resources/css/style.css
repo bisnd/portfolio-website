@@ -47,7 +47,7 @@ h1 {
 
 h2 {
     font-family: "Luckiest Guy", cursive;
-    font-size: 3.25rem; /* 52px */
+    font-size: 4rem; /* 64px */
     letter-spacing: 0.1rem;
     color: #f4b7cd;
     text-shadow: #9e3a63 0.25rem 0.25rem; /* 4px */
@@ -116,12 +116,6 @@ header.landing-page {
     text-decoration-style: wavy;
     text-underline-offset: 0.375rem;
     text-decoration-thickness: 0.0625rem;
-}
-
-/* Main */
-
-main {
-
 }
 
 /* About Me */
@@ -344,13 +338,22 @@ main {
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.1rem;
-    background-color: #9e3a63;
-    color: #FFF5EE;
-}
-
-.contact .submit-button:hover {
     background-color: #f4b7cd;
     color: #9e3a63;
 }
 
+.contact .submit-button:hover {
+    background-color: #9e3a63;
+    color: #FFF5EE;
+}
+
 /* Footer */
+footer {
+    background-color: #9e3a63;
+    background-image: url(/resources/images/bg-grain-dark.png); /* Grain png to create noise over the background color */
+    background-size: 18.75rem; /* Size of the background image */
+    background-repeat: repeat;
+    color: #FFF5EE;
+    padding: 1rem;
+    text-align: center;
+}
