@@ -62,7 +62,6 @@ h3 {
 }
 
 p {
-    font-family: "Anonymous Pro", monospace; /* Redundant but added to be clear */
     line-height: 1.4;
     color: #FFF5EE;
 }
@@ -75,12 +74,15 @@ a {
 
 header.landing-page {
     display: grid;
-    height: 50rem; /* 800px */
-    grid-template: 2fr 1fr 2fr / repeat(3, 1fr); /* 3 rows (1 double row, 1 single row, 1 double row) and 3 columns */
+    height: 100vh; /* 100% of viewport height */
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr); /* 5 rows same size (1 double row, 1 single row, 1 double row) and 3 columns */
     grid-template-areas: ". . ."
+        ". . ."
         ". title ."
-        ". name .";
+        ". name ."
+        ". scroll .";
     justify-items: center;
+    position: relative;
     
     /* border: solid 1px blue; */
 }
@@ -106,7 +108,7 @@ header.landing-page {
     /* border: solid 1px yellow; */
 }
 
-.landing-page a {
+.landing-page h3 a {
     color: #FFF5EE; /* #7771e0 - #f4f4ed - #F9F6EE - Used: #3E454B */
     text-shadow: #9e3a63 0.1875rem 0.125rem; /* 2px */
 }
@@ -116,6 +118,35 @@ header.landing-page {
     text-decoration-style: wavy;
     text-underline-offset: 0.375rem;
     text-decoration-thickness: 0.0625rem;
+}
+
+.arrow {
+    grid-area: scroll;
+    align-self: center;
+    font-size: 1.5rem;
+    color: #f4b7cd;
+    position: absolute;
+    transform: translateY(0); /* Initial position on Y axis */
+    transition: all 750ms ease-in-out;
+}
+
+.lift {
+    transform: translateY(1rem); /* Position of the arrow on the Y axis, when it's up */
+}
+
+.hide {
+    opacity: 0;
+}
+
+/* Main */
+main {
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.active {
+    opacity: 1;
 }
 
 /* About Me */
@@ -133,7 +164,7 @@ header.landing-page {
 .picture-container {
     flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
     text-align: center;
-    width: 50%;
+    width: 50vh;
     height: 100%;
 
     /* border: 1px solid; */
@@ -170,10 +201,20 @@ header.landing-page {
     margin-bottom: 3%;
 }
 
+/*
 .skills-icons {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+}
+*/
+
+.skills-icons {
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
 }
 
 .skills-icons .fa-brands {
@@ -181,27 +222,41 @@ header.landing-page {
     color: #FFF5EE;
 }
 
-.fa-html5:hover {
+.icon-names {
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+    justify-content: space-around;
+    justify-items: center;
+}
+
+p.icon-name {
+    font-family: "Anonymous Pro", monospace;
+    font-size: 1.25rem;
+    text-align: center;
+    visibility: hidden;
+}
+
+.skill.fa-html5:hover {
     color: #f06529;
 }
 
-.fa-css3-alt:hover {
+.skill.fa-css3-alt:hover {
     color: #264de4;
 }
 
-.fa-js:hover {
+.skill.skill.fa-js:hover {
     color: #f0db4f;
 }
 
-.fa-react:hover {
+.skill.fa-react:hover {
     color: #61DBFB;
 }
 
-.fa-node-js:hover {
+.skill.fa-node-js:hover {
     color: #68a063;
 }
 
-.fa-git-alt:hover {
+.skill.fa-git-alt:hover {
     color: #F1502F;
 }
 
