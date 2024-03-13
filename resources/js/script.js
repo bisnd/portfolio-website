@@ -1,4 +1,6 @@
-//Making the scroll down arrow bounce. The function checks if the arrow is up or down, then adds or removes the "lift" class accordingly
+// BOUNCE ARROW
+// Making the scroll down arrow bounce. The function checks if the arrow is up or down, then adds or removes the "lift" class accordingly
+
 let arrow = document.getElementById('id-arrow');
 
 function arrowBounce() {
@@ -11,14 +13,16 @@ function arrowBounce() {
 
 setInterval(arrowBounce, 800); //run the arrowBounce function every 800ms
 
+
+// ARROW DISAPPEAR ON SCROLL
 // Making the arrow disappear when scrolling down
 
-let windowheight = window.innerHeight; // From MDN: The read-only "innerHeight" property of the Window interface returns the interior height of the window in pixels
+let windowheight = window.innerHeight; // The read-only "innerHeight" property of the Window interface returns the interior height of the window in pixels
 
 window.addEventListener('scroll', disappear)
 
 function disappear() {
-    // From MDN: The "Element.getBoundingClientRect()" method returns a DOMRect object providing information about the size of an element and its position relative to the viewport
+    // The "Element.getBoundingClientRect()" method returns a DOMRect object providing information about the size of an element and its position relative to the viewport
     let arrowtop = arrow.getBoundingClientRect().top; // Gets the value for the "top" position of the "arrow" variable, this changes as you are scrolling the page
     let hidepoint = 350;
 
@@ -29,7 +33,10 @@ function disappear() {
     }
 }
 
+
+// CONTENT APPEAR ON SCROLL
 // Making content appear when scrolling down
+
 window.addEventListener('scroll', reveal);
 
 function reveal() {
@@ -44,7 +51,9 @@ function reveal() {
     }
 }
 
-// Making text appear when hovering on skills icons
+
+// SHOW SKILLS ICONS TEXT
+// Making text appear when hovering on skills icons. Wanting actual text (not title attribute) for accessibility reasons
 
 let icons = document.getElementsByClassName('skill'); // Returns an array of the skill icons
 
@@ -102,41 +111,3 @@ for (let i = 0; i < icons.length; i++) {
             gitText.style.visibility = 'hidden'};
     }
 }
-
-
-/*
-function iconsLabels() {
-    let icons = document.getElementsByClassName('skill');
-    function displayText(type) {
-        document.querySelector(type).style.display = 'block';
-    }
-    function hideText(type) {
-        document.querySelector(type).style.display = 'none';
-    }
-
-    for (let i = 0; i < icons.length; i++) {
-        let icon = icons[i];
-        let iconClasses = icon.classList;
-
-        if (iconClasses.contains('fa-html5')) {
-            icon.onmouseover = displayText('html');
-            icon.onmouseout = hideText('html');
-        } else if (iconClasses.contains('fa-css3-alt')) {
-            icon.onmouseover = displayText('css');
-            icon.onmouseout = hideText('css');
-        } else if (iconClasses.contains('fa-js')) {
-            icon.onmouseover = displayText('js');
-            icon.onmouseout = hideText('js');
-        } else if (iconClasses.contains('fa-react')) {
-            icon.onmouseover = displayText('react');
-            icon.onmouseout = hideText('react');
-        } else if (iconClasses.contains('fa-node-js')) {
-            icon.onmouseover = displayText('node');
-            icon.onmouseout = hideText('node');
-        } else if (iconClasses.contains('fa-git-alt')) {
-            icon.onmouseover = displayText('git');
-            icon.onmouseout = hideText('git');
-        }
-    }
-}
-*/

@@ -83,8 +83,6 @@ header.landing-page {
         ". scroll .";
     justify-items: center;
     position: relative;
-    
-    /* border: solid 1px blue; */
 }
 
 .landing-page h1 {
@@ -92,8 +90,6 @@ header.landing-page {
     line-height: 1;
     text-align: center;
     align-self: center;
-
-    /* border: solid 1px red; */
 }
 
 .landing-page h3 {
@@ -104,8 +100,6 @@ header.landing-page {
     color: #FFF5EE;
     text-shadow: none; /* So the divider doesn't have the shadow other h3 have */
     align-self: start;
-
-    /* border: solid 1px yellow; */
 }
 
 .landing-page h3 a {
@@ -157,8 +151,6 @@ main {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid pink; */
 }
 
 .picture-container {
@@ -166,8 +158,6 @@ main {
     text-align: center;
     width: 50vh;
     height: 100%;
-
-    /* border: 1px solid; */
 }
 
 .picture-container img {
@@ -178,8 +168,6 @@ main {
     flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
     width: 50%;
     margin-left: 10%;
-
-    /* border: 1px solid white; */
 }
 
 .bio h2 {
@@ -200,14 +188,6 @@ main {
     text-align: center;
     margin-bottom: 3%;
 }
-
-/*
-.skills-icons {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
-*/
 
 .skills-icons {
     display: grid;
@@ -324,7 +304,6 @@ p.icon-name {
 
 .project-buttons a.button {
     width: 33%;
-    font-size: 1rem;
     text-align: center;
     background-color: #f4b7cd;
     color: #9e3a63;
@@ -337,9 +316,26 @@ p.icon-name {
 .project-buttons a.button:hover {
     background-color: #9e3a63;
     color: #f4b7cd;
+    padding: 2.6% 4%;
 }
 
-/* Contaact */
+.project-buttons a.button:hover i {
+    display: none;
+}
+
+.project-buttons a.source-code:hover:before {
+    content: 'Source Code';
+    font-size: 0.9375rem; /* 15px*/
+    font-weight: 700;
+}
+
+.project-buttons a.live-site:hover:before {
+    content: 'Live Site';
+    font-size: 0.9375rem; /* 15px*/
+    font-weight: 700;
+}
+
+/* Contact */
 
 .contact {
     margin: 7% 10%;
