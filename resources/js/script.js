@@ -55,55 +55,57 @@ function reveal() {
 // SHOW SKILLS ICONS TEXT
 // Making text appear when hovering on skills icons. Wanting actual text (not title attribute) for accessibility reasons
 
-let icons = document.getElementsByClassName('skill'); // Returns an array of the skill icons
+let icons = document.getElementsByClassName('skill'); // Returns an array-like of the elements with class "skill", this will include both the <i> elements visible in my html and the <svg> elements nested inside them in the DOM via Font Awesome (svg + js).
 
-// Select icon from array. If icon contains class html, when .mouseover = displayText of element that contains that same class html
+
+// Select an icon from the array. If the icon contains the specific class ex. "html", when .mouseover make the <p> that has the same class. <p> is after <i> so to select it we need to select [1] instead of [0]
+
 for (let i = 0; i < icons.length; i++) {
     let icon = icons[i];
     let iconClasses = icon.classList;
 
-    if (iconClasses.contains('fa-html5')) {
-        let htmlText = document.getElementsByClassName('html')[0];
+    if (iconClasses.contains('html')) {
+        let htmlText = document.getElementsByClassName('html')[1];
 
         icon.onmouseover = function() {
             htmlText.style.visibility = 'visible'};
         icon.onmouseout = function() {
             htmlText.style.visibility = 'hidden'};
     
-    } else if (iconClasses.contains('fa-css3-alt')) {
-        let cssText = document.getElementsByClassName('css')[0];
+    } else if (iconClasses.contains('css')) {
+        let cssText = document.getElementsByClassName('css')[1];
 
         icon.onmouseover = function() {
             cssText.style.visibility = 'visible'};
         icon.onmouseout = function() {
             cssText.style.visibility = 'hidden'};
     
-    } else if (iconClasses.contains('fa-js')) {
-        let jsText = document.getElementsByClassName('js')[0];
+    } else if (iconClasses.contains('js')) {
+        let jsText = document.getElementsByClassName('js')[1];
 
         icon.onmouseover = function() {
             jsText.style.visibility = 'visible'};
         icon.onmouseout = function() {
             jsText.style.visibility = 'hidden'};
     
-    } else if (iconClasses.contains('fa-react')) {
-        let reactText = document.getElementsByClassName('react')[0];
+    } else if (iconClasses.contains('react')) {
+        let reactText = document.getElementsByClassName('react')[1];
 
         icon.onmouseover = function() {
             reactText.style.visibility = 'visible'};
         icon.onmouseout = function() {
             reactText.style.visibility = 'hidden'};
     
-    } else if (iconClasses.contains('fa-node-js')) {
-        let nodeText = document.getElementsByClassName('node')[0];
+    } else if (iconClasses.contains('node')) {
+        let nodeText = document.getElementsByClassName('node')[1];
 
         icon.onmouseover = function() {
             nodeText.style.visibility = 'visible'};
         icon.onmouseout = function() {
             nodeText.style.visibility = 'hidden'};
     
-    } else if (iconClasses.contains('fa-git-alt')) {
-        let gitText = document.getElementsByClassName('git')[0];
+    } else if (iconClasses.contains('git')) {
+        let gitText = document.getElementsByClassName('git')[1];
 
         icon.onmouseover = function() {
             gitText.style.visibility = 'visible'};

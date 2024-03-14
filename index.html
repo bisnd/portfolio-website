@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <script defer src="/resources/js/fontawesome/brands.js"></script>
-    <script defer src="/resources/js/fontawesome/regular.js"></script>
-    <script defer src="/resources/js/fontawesome/solid.js"></script>
-    <script defer src="/resources/js/fontawesome/fontawesome.js"></script>
+    <!-- Local hosting of Font Awesome as svg + js. Added 'data-auto-replace-svg="nest"' so that <svg> are nested inside <i> instead of substituting them -->
+    <script defer src="/resources/js/fontawesome/brands.js" data-auto-replace-svg="nest"></script>
+    <script defer src="/resources/js/fontawesome/regular.js" data-auto-replace-svg="nest"></script>
+    <script defer src="/resources/js/fontawesome/solid.js" data-auto-replace-svg="nest"></script>
+    <script defer src="/resources/js/fontawesome/fontawesome.js" data-auto-replace-svg="nest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Luckiest+Guy&family=Rubik+Bubbles&display=swap" rel="stylesheet"> <!--Fonts: Rubik Bubbles (h1/landing title), Luckiest Guy (h2 titles), Anonymous Pro (h3 titles + body)-->
     <link rel="stylesheet" href="./resources/css/style.css">
     <script defer src="/resources/js/script.js"></script>
@@ -41,17 +42,18 @@
         <section class="skills">
             <h2>Skills</h2>
             <div class="skills-icons">
-                <i class="fa-brands fa-html5 skill">
+                <!-- "fa-brands fa-html5" classes disappear from <i> in the DOM when the <svg> icons appear. This is why I need additional classes "skill i-html" etc in order to reference the <i>/icons on the DOM and CSS-->
+                <i class="fa-brands fa-html5 skill html">
                 </i>
-                <i class="fa-brands fa-css3-alt skill">
+                <i class="fa-brands fa-css3-alt skill css">
                 </i>
-                <i class="fa-brands fa-js skill">
+                <i class="fa-brands fa-js skill js">
                 </i>
-                <i class="fa-brands fa-react skill">
+                <i class="fa-brands fa-react skill react">
                 </i>
-                <i class="fa-brands fa-node-js skill">
+                <i class="fa-brands fa-node-js skill node">
                 </i>
-                <i class="fa-brands fa-git-alt skill">
+                <i class="fa-brands fa-git-alt skill git">
                 </i>
             </div>
             <div class="icon-names">
