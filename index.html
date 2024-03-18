@@ -16,8 +16,8 @@
 <body>
 <!-- Landing Page -->
     <header class="landing-page">
-        <h1>Portfolio</h1>
-        <h3><a href="#id-about">Name Lastname</a> | <a href="#id-projects">Software Developer</a></h3>
+        <a href="#" class="portfolio-title"><h1>Port<wbr>folio</h1></a>
+        <h3><a href="#id-about">Name Lastname</a> | <br><a href="#id-projects">Software Developer</a></h3>
         <a href="#id-main" class="arrow" id="id-arrow">
             <i class="fa-solid fa-chevron-down"></i>
         </a>
@@ -76,14 +76,15 @@
                         <i class="fa-brands fa-html5"></i>
                         <i class="fa-brands fa-css3-alt"></i>
                         <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-git-alt"></i>
                     </div>
                     <div class="img-container">
                         <img src="/resources/images/portfolio-website.png" alt="Portfolio website homepage">
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target=“_blank” class="button source-code"><p>Source<br>Code</p><i class="fa-solid fa-code"></i></a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow" target=“_blank” class="button live-site"><p>Live<br>Site</p><i class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
                 <div class="project-container project-2">
@@ -97,8 +98,8 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="" class="button source-code"><p>Source<br>Code</p><i target=“_blank” class="fa-solid fa-code"></i></a>
+                        <a href="" class="button live-site"><p>Live<br>Site</p><i target=“_blank” class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
                 <div class="project-container project-3">
@@ -114,8 +115,8 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="" class="button source-code"><p>Source<br>Code</p><i target=“_blank” class="fa-solid fa-code"></i></a>
+                        <a href="" class="button live-site"><p>Live<br>Site</p><i target=“_blank” class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
                 <div class="project-container project-4">
@@ -131,8 +132,8 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="" class="button source-code"><p>Source<br>Code</p><i target=“_blank” class="fa-solid fa-code"></i></a>
+                        <a href="" class="button live-site"><p>Live<br>Site</p><i target=“_blank” class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
                 <div class="project-container project-5">
@@ -148,8 +149,8 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="" class="button source-code"><p>Source<br>Code</p><i target=“_blank” class="fa-solid fa-code"></i></a>
+                        <a href="" class="button live-site"><p>Live<br>Site</p><i target=“_blank” class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
                 <div class="project-container project-6">
@@ -165,8 +166,8 @@
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="project-buttons">
-                        <a href="" class="button source-code"><i class="fa-solid fa-code"></i></a>
-                        <a href="" class="button live-site"><i class="fa-regular fa-window-maximize"></i></a>
+                        <a href="" class="button source-code"><p>Source<br>Code</p><i target=“_blank” class="fa-solid fa-code"></i></a>
+                        <a href="" class="button live-site"><p>Live<br>Site</p><i target=“_blank” class="fa-regular fa-window-maximize"></i></a>
                     </div>
                 </div>
             </div>
@@ -177,11 +178,11 @@
             <form action="">
                 <label for="name">Full name</label>
                 <br>
-                <input type="text" name="name" id="name" minlength="2" required>
+                <input type="text" name="name" id="name" minlength="2" autocomplete="name" required>
                 <br>
                 <label for="email">Email</label>
                 <br>
-                <input type="email" name="email" id="email" placeholder="your@email.com" required>
+                <input type="email" name="email" id="email" placeholder="your@email.com" autocomplete="email" required>
                 <br>
                 <label for="message">Message</label>
                 <br>

@@ -1,23 +1,3 @@
-/* Fonts 
-.rubik-bubbles-regular {
-    font-family: "Rubik Bubbles", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.luckiest-guy-regular {
-    font-family: "Luckiest Guy", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.anonymous-pro-regular {
-    font-family: "Anonymous Pro", monospace;
-    font-weight: 400; 700;
-    font-style: normal; italic;
-}
-*/
-
 /* Universal Styles */
 
 * {
@@ -28,7 +8,7 @@
 
 html, body {
     width: 100%;
-    background-color: #b35130; /* #a59ff9 - #8F4069 - #ABA5FA - #33574F - Used: #bbb7fa */
+    background-color: #b35130;
     background-image: url(/resources/images/bg-grain-dark.png); /* Grain png to create noise over the background color */
     background-size: 18.75rem; /* Size of the background image */
     background-repeat: repeat;
@@ -41,7 +21,7 @@ h1 {
     font-size: 9rem; /* 144px */
     font-weight: 400;
     letter-spacing: 0.1rem;
-    color: #f4b7cd; /* #fac79e - #ffaf9e - #CF6766 - #9dbfc0 - Used: #4743B5 */
+    color: #f4b7cd;
     text-shadow: #9e3a63 0.25rem 0.25rem; /* 4px */
 }
 
@@ -70,44 +50,80 @@ a {
     text-decoration: none;
 }
 
+@media (max-width: 600px) { /* Mobile phones */
+    h1 {
+        font-size: 6.5rem; /* 104px */
+        letter-spacing: 0;
+    }
+
+    h2 {
+        font-size: 3rem; /* 48px */
+    }
+
+    h3 {
+        font-size: 1.3125rem; /* 21px */
+    }
+
+    p {
+        font-size: 0.875rem; /* 14px */
+        line-height: 1.3;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1050px) { /* Tablets */
+    h1 {
+        font-size: 7.5rem; /* 120px */
+        letter-spacing: 0;
+    }
+}
+
 /* Landing Page */
 
 header.landing-page {
-    display: grid;
     height: 100vh; /* 100% of viewport height */
-    grid-template: repeat(5, 1fr) / repeat(3, 1fr); /* 5 rows same size (1 double row, 1 single row, 1 double row) and 3 columns */
-    grid-template-areas: ". . ."
+    display: grid;
+    grid-template: 1fr 1fr auto 1fr 1fr / repeat(3, 1fr); /* 5 rows and 3 columns */
+    grid-template-areas:
+        ". . ."
         ". . ."
         ". title ."
-        ". name ."
+        ". text ."
         ". scroll .";
     justify-items: center;
     position: relative;
 }
 
-.landing-page h1 {
+.landing-page h1, a.portfolio-title {
     grid-area: title;
     line-height: 1;
     text-align: center;
     align-self: center;
 }
 
+.landing-page h1 wbr { /* Break point for "Portfolio", needed only on smaller screens */
+    display: none;
+}
+
 .landing-page h3 {
-    grid-area: name;
+    grid-area: text;
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
     color: #FFF5EE;
-    text-shadow: none; /* So the divider doesn't have the shadow other h3 have */
+    text-shadow: none; /* So the divider doesn't have the shadow other h3 have as default */
     align-self: start;
 }
 
-.landing-page h3 a {
-    color: #FFF5EE; /* #7771e0 - #f4f4ed - #F9F6EE - Used: #3E454B */
-    text-shadow: #9e3a63 0.1875rem 0.125rem; /* 2px */
+.landing-page h3 br { /* Line break between "Name Lastname" and "Software Developer", needed only on smaller screens */
+    display: none;
 }
 
-.landing-page a:hover {
+.landing-page h3 a {
+    color: #FFF5EE;
+    text-shadow: #9e3a63 0.1875rem 0.125rem; /* 3px 2px */
+}
+
+.landing-page h3 a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
     text-underline-offset: 0.375rem;
@@ -132,6 +148,55 @@ header.landing-page {
     opacity: 0;
 }
 
+@media (max-width: 600px) { /* Mobile phones */
+    header.landing-page {
+        grid-template: 1fr 1fr auto 1fr 1fr / 1fr; /* 5 rows and 1 column */
+        grid-template-areas:
+            "."
+            "."
+            "title"
+            "text"
+            "scroll";
+    }
+
+    .landing-page h1, a.portfolio-title {
+        align-self: center;
+        line-height: 0.85;
+        padding-bottom: 0.5rem;
+    }
+
+    .landing-page h1 wbr {
+        display: inline;
+    }
+
+    .landing-page h3 {
+        grid-area: text;
+        align-self: start;
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .landing-page h3 br {
+        display: inline;
+    }
+
+    .landing-page h3 a:active {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 0.375rem;
+        text-decoration-thickness: 0.0625rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1050px) { /* Tablets */
+    .landing-page h3 a:active {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 0.375rem;
+        text-decoration-thickness: 0.0625rem;
+    }
+}
+
 /* Main */
 main {
     position: relative;
@@ -146,28 +211,33 @@ main {
 /* About Me */
 
 .about-me {
-    height: 40rem; /* 640px */
+    height: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    align-content: center;
     align-items: center;
+    margin: auto 10%;
 }
 
 .picture-container {
     flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
     text-align: center;
-    width: 50vh;
+    width: 50%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .picture-container img {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .bio {
-    flex: 1 1 0px; /*  shorthand for flex-grow: 1; flex-shrink: 1; flex-basis: 0; */
+    flex: 1 1 0px;
     width: 50%;
-    margin-left: 10%;
 }
 
 .bio h2 {
@@ -176,6 +246,23 @@ main {
 
 .bio p {
     margin-right: 10%;
+}
+
+@media (max-width: 600px) { /* Mobile phones */
+    .about-me {
+        height: auto;
+        flex-flow: column-reverse;
+    }
+
+    .picture-container {
+        height: 50vh;
+        width: auto;
+    }
+
+    .bio {
+        flex: 1 1 0px;
+        width: auto;
+    }
 }
 
 /* Skills */
@@ -207,6 +294,7 @@ main {
     grid-template: 1fr / repeat(6, 1fr);
     justify-content: space-around;
     justify-items: center;
+    align-items: center;
 }
 
 p.icon-name {
@@ -214,6 +302,7 @@ p.icon-name {
     font-size: 1.25rem;
     text-align: center;
     visibility: hidden;
+    overflow: hidden;
 }
 
 i.skill.html:hover {
@@ -240,6 +329,21 @@ i.skill.html:hover {
     color: #F1502F;
 }
 
+@media (max-width: 600px) { /* Mobile phones */
+    .skills {
+        margin: 10% 5%;
+    }
+
+    .skills-icons .skill {
+        font-size: 2rem;
+        margin: auto 3%;
+    }
+
+    p.icon-name {
+        font-size: 0.75rem;
+    }
+}
+
 /* Projects */
 
 .projects {
@@ -253,7 +357,7 @@ i.skill.html:hover {
 
 .projects-list {
     display: grid;
-    grid-template: 2fr / repeat(3, 1fr);
+    grid-template: 2fr / repeat(3, 1fr); /* 2 rows and 3 columns */
     gap: 5% 3%;
     justify-content: center;
     align-content: center;
@@ -267,6 +371,7 @@ i.skill.html:hover {
     background-repeat: repeat;
     border-radius: 1rem;
     padding: 5% 7%;
+    margin: 5% 3%;
 }
 
 .project-container h3 {
@@ -313,26 +418,104 @@ i.skill.html:hover {
     margin: auto 5%;
 }
 
+.project-buttons p {
+    display: none;
+    color: #9e3a63;
+    font-size: 0.9375rem; /* 15px*/
+    font-weight: 700;
+    line-height: 1;
+}
+
+.project-buttons i {
+    margin: ;
+}
+
 .project-buttons a.button:hover {
     background-color: #9e3a63;
     color: #f4b7cd;
-    padding: 2.6% 4%;
+    padding: 1.7% 4%;
+}
+
+.project-buttons a.button:hover p {
+    display: block;
+    color: #f4b7cd;
 }
 
 .project-buttons a.button:hover i {
     display: none;
 }
 
-.project-buttons a.source-code:hover:before {
-    content: 'Source Code';
-    font-size: 0.9375rem; /* 15px*/
-    font-weight: 700;
+
+@media (max-width: 600px) { /* Mobile phones */
+    .projects {
+        margin: 3% 10%;
+    }
+
+    .projects-list {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .project-buttons a.button {
+        width: 40%;
+        padding: 2% 4%;
+    }
+
+    .project-buttons i {
+        display: none;
+    }
+
+    .project-buttons p {
+        display: block;
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .project-buttons a.button:hover,.project-buttons a.button:visited {
+        padding: 5.7%;
+    }
+
+    .project-buttons a.button:hover p, .project-buttons a.button:visited p {
+        display: none;
+    }
+
+    .project-buttons a.button:hover i, .project-buttons a.button:visited i {
+        display: block;
+        text-align: center;
+    }
 }
 
-.project-buttons a.live-site:hover:before {
-    content: 'Live Site';
-    font-size: 0.9375rem; /* 15px*/
-    font-weight: 700;
+@media (min-width: 601px) and (max-width: 1050px) { /* Tablets */
+    .projects-list {
+        grid-template: 3fr / repeat(2, 1fr); /* 3 rows and 2 columns */
+        gap: 1% 3%;
+    }
+
+    .project-buttons a.button {
+        width: 40%;
+        padding: 2% 4%;
+    }
+
+    .project-buttons i {
+        display: none;
+    }
+
+    .project-buttons p {
+        display: block;
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .project-buttons a.button:hover,.project-buttons a.button:visited {
+        padding: 5.7%;
+    }
+
+    .project-buttons a.button:hover p, .project-buttons a.button:visited p {
+        display: none;
+    }
+
+    .project-buttons a.button:hover i, .project-buttons a.button:visited i {
+        display: block;
+        text-align: center;
+    }
 }
 
 /* Contact */
@@ -398,6 +581,22 @@ i.skill.html:hover {
     color: #FFF5EE;
 }
 
+@media (max-width: 600px) { /* Mobile phones */
+    .contact {
+        margin: 3% auto;
+    }
+
+    .contact form {
+        width: 90%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1050px) { /* Tablets */
+    .contact form {
+        width: 90%;
+    }
+}
+
 /* Footer */
 footer {
     background-color: #9e3a63;
@@ -407,4 +606,8 @@ footer {
     color: #FFF5EE;
     padding: 1rem;
     text-align: center;
+}
+
+footer p {
+    font-size: 0.75rem; /* 12px */
 }
